@@ -18,14 +18,16 @@ namespace SimpleAPI.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController()
+        public WeatherController()
         {
             _logger = null;
         }
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
+
+        public static string[] Summaries1 => Summaries;
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
@@ -35,7 +37,7 @@ namespace SimpleAPI.Controllers
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
+                Summary = Summaries1[rng.Next(Summaries1.Length)]
             })
             .ToArray();
         }
