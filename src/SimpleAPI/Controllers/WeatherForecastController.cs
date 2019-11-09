@@ -39,5 +39,12 @@ namespace SimpleAPI.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("{argument}")]
+        public ActionResult<IEnumerable<string>> Get(string argument = "test")
+        {
+            return new string[] { "dotnet", "playbook" };
+        }
+
     }
 }
