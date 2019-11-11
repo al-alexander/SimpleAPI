@@ -21,7 +21,7 @@ namespace SimpleAPI.Controllers
         public WeatherController()
         {
             _logger = null;
-            var rng = new Random();
+            var rng1 = new Random();
         }
         public WeatherController(ILogger<WeatherForecastController> logger)
         {
