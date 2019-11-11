@@ -11,18 +11,24 @@ namespace SimpleAPI.Controllers
     [Route("[controller]")]
     public class WeatherController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
 
         private readonly ILogger<WeatherForecastController> _logger;
+	
+        private static readonly string[] Summaries = new[]
+        {
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Test value", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        };
+
+        
 
         public WeatherController()
         {
+            var rng2 = new Random();
+            var e = 5;
             _logger = null;
             var rng1 = new Random();
         }
+
         public WeatherController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
